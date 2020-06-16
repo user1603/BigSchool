@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace BigSchool.Controllers
 {
@@ -20,6 +21,8 @@ namespace BigSchool.Controllers
         {
             _dbContext = new ApplicationDbContext();
         }
+
+        
 
         [Authorize]
         public ActionResult Create()
@@ -42,7 +45,7 @@ namespace BigSchool.Controllers
             }
             var course = new Course
             {
-                LectunerId = User.Identity.GetUserId(),
+                LecturerId = User.Identity.GetUserId(),
                 DateTime = viewModel.GetDateTime(),
                 CategoryId = viewModel.Category,
                 Place = viewModel.Place

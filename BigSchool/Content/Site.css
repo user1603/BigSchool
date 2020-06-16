@@ -27,3 +27,23 @@ textarea {
     background-color: #00FFFF;
     border-color: #FFFF33;
 }
+
+.courses{
+    list-style:none;
+}
+.courses > li{
+    position: relative;
+    margin-bottom: 30px;
+}
+.courses > li .date{
+    text-align: center;
+    background-color: #990000;
+    color: white;
+    width: 60px;
+    border-radius: 8px;
+}
+.courses > li .details{
+    position: absolute;
+    top: 0;
+    left: 70px;
+}
