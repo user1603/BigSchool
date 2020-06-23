@@ -31,7 +31,7 @@
         {
             <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendance btn-default-color">Going</button>
                     
-                    //<button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendance">Going?</button>
+                    
         }
     </div>
 </li>}
@@ -44,10 +44,7 @@
 				var button = $(e.target);
 				$.post("/api/attendances", { courseID: button.attr("data-course-id") })
                     .done(function () {
-						//button
-						//	.removeClass("btn-default")
-						//	.addClass("btn-info")
-      //                      .text("Going");
+						
                         location.reload();
 
 					})

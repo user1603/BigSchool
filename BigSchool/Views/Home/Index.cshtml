@@ -84,16 +84,13 @@
                     .done(function () {
                         if (button.text() == "Going?") {
                             button.text("Going");
-                            button.css("background-color", "#77f539");
+                            button.css("background-color", "#FF3333");
                         }
                         else {
                             button.text("Going?");
                             button.css("background-color", "#ffffff");
                         }
-						//button
-						//	.removeClass("btn-default")
-						//	.addClass("btn-info")
-						//	.text("Going");
+						
 					})
 					.fail(function() {
 						alert("something failed!");
@@ -126,7 +123,7 @@
 
 <div class="row">
     <ul>
-        @foreach(var course in Model.UpcommingCourses) //UpcommingCourses
+        @foreach(var course in Model.UpcommingCourses) 
 		{
             <li>
                 @course.DateTime - @course.Lecturer.Name
