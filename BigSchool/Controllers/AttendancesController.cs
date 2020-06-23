@@ -1,5 +1,5 @@
-﻿using BigSchool.DTOs;
-using BigSchool.Models;
+﻿using bigschool.DTOs;
+using bigschool.Models;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -8,33 +8,50 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace BigSchool.Controllers
+namespace bigschool.Controllers
 {
-    [Authorize]
+	[Authorize]
     public class AttendancesController : ApiController
     {
-        private ApplicationDbContext _dbContext;
+		private ApplicationDbContext _dbContext;
 
-        public AttendancesController()
-        {
-            _dbContext = new ApplicationDbContext();
-        }
+		public AttendancesController()
+		{
+			_dbContext = new ApplicationDbContext();
+		}
 
-        [HttpPost]
-        public IHttpActionResult Attend(AttendanceDto attendanceDto)
-        {
-            var userId = User.Identity.GetUserId();
-            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == attendanceDto.CourseId))
-                return BadRequest("The Attendance already exists!");
-            var attendance = new Attendance
+		[HttpPost]
+		public IHttpActionResult Attend(AttendanceDto attendanceDto)
+		{
+			var userId = User.Identity.GetUserId();
+			try
             {
-                CourseId = attendanceDto.CourseId,
-                AttendeeId = userId
-            };
-            _dbContext.Attendances.Add(attendance);
-            _dbContext.SaveChanges();
+				Attendance attendances = _dbContext.Attendances.Where(a => a.AttendeeID == userId && a.CourseID == attendanceDto.CourseID).FirstOrDefault();
 
-            return Ok();
-        }
+				//if (_dbContext.Attendances.Any(a => a.AttendeeID == userId && a.CourseID == attendanceDto.CourseID))
+				if (attendances != null)
+				{
+					_dbContext.Attendances.Remove(attendances);
+					_dbContext.SaveChanges();
+				}
+				else
+				{
+					var attendance = new Attendance
+					{
+						CourseID = attendanceDto.CourseID,
+						AttendeeID = userId
+					};
+
+					_dbContext.Attendances.Add(attendance);
+					_dbContext.SaveChanges();
+				}
+			}
+			catch(Exception ex)
+            {
+				return BadRequest("Error!");
+			}
+			
+			return Ok();
+		}
     }
 }

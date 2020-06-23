@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using BigSchool.Models;
+using bigschool.Models;
 
-namespace BigSchool
+namespace bigschool
 {
     public class EmailService : IIdentityMessageService
     {

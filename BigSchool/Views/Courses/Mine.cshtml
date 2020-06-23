@@ -1,50 +1,55 @@
-﻿@model IEnumerable<BigSchool.Models.Course>
+﻿@model IEnumerable<bigschool.Models.Course>
 @{
-    ViewBag.Title = "Mine";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Mine";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Mine</h2>
 
 <ul class="course">
-    @foreach (var course in Model)
-    {
-        <li>
-            <div class="date">
-                <div class="month">
-                    @course.DateTime.ToString("MM")
-                </div>
-                <div class="day">
-                    @course.DateTime.ToString("dd")
-                </div>
-            </div>
-            <div class="details">
-                <span class="lecturer">
-                    @course.Lecturer.Name
-                </span>
-                <span class="category">
-                    @course.Category.Name
-                </span>
-            </div>
-            <div class="action">
-                <a href="@Url.Action("Edit","Courses",new { id =course.Id})">Edit</a>
-                <a href="#" class="js-cancel-course" data-course-id="@course.Id">Cancel</a>
+	@foreach (var course in Model)
+	{
+		<li>
+			<div class="date">
+				<div class="month">
+					@course.DateTime.ToString("MM")
+				</div>
+				<div class="day">
+					@course.DateTime.ToString("dd")
+				</div>
+			</div>
+			<div class="details">
+				<span class="lecturer">
+					@course.Lecturer.Name
+				</span><br/>
+				<span class="category">
+					@course.Category.Name
+				</span><br/>
+				<span class="place">
+					@course.Place
+				</span>
+			</div>
 
-            </div>
-        </li>
-    }
+			<div class="action">
+				<a href="@Url.Action("Edit","Courses",new { id =course.Id})">Edit</a>
+				<a href="#" class="js-cancel-course" data-course-id="@course.Id">Delete</a>
+			</div>
+		</li>
+	}
 </ul>
 @section scripts
 {
-    <script>
+	<script>
 		$(document).ready(function () {
 			$(".js-cancel-course").click(function (e) {
 				e.preventDefault();
 				var link = $(e.target);
-				bootbox.confirm("Are you sure to delete?",
-					function () {
+				bootbox.confirm("Are you sure to delete?", function (res) {
+					if (res) {
+
+
 						$.ajax({
-							url: "/api/coureses/" + link.attr("data-course-id"),
+							url: "/api/courses/" + link.attr("data-course-id"),
 							method: "DELETE"
 						})
 							.done(function () {
@@ -55,8 +60,11 @@
 							.fail(function () {
 								alert("Something failed!");
 							});
-					});
+					}
+                   
+				});
+                return false;
 			});
 		});
-    </script>
+	</script>
 }

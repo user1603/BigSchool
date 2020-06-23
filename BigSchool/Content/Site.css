@@ -23,36 +23,64 @@ textarea {
     max-width: 280px;
 }
 
+.lecturer{
+    font-weight: bold;
+}
+.month {
+    padding: 4px;
+    font-weight:600;
+} 
+.day
+{
+    padding:4px;
+}
+.btn-default-color {
+    background-color: #77f539;
+}
+
+
 .navbar-inverse {
     background-color: #00FFFF;
-    border-color: #FFFF33;
+    border-color:#FFFF00;
 }
 
-.courses{
-    list-style:none;
-}
-.courses > li{
-    position: relative;
-    margin-bottom: 30px;
-}
-.courses > li .date{
-    text-align: center;
-    background-color: #990000;
-    color: white;
-    width: 60px;
-    border-radius: 8px;
-}
-.courses > li .details{
-    position: absolute;
-    top: 0;
-    left: 70px;
-}
-.course > li .action {
-    display: inline;
-    left: 70px;
-    position: absolute;
+    .navbar-inverse .navbar-brand {
+        color: #ffffff;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #000000;
+    }
+
+.course {
+    list-style: none;
 }
 
-.course > li:hover .action {
-    display: block;
-}
+    .course > li {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+        .course > li .date {
+            text-align: center;
+            background-color: #99FF66;
+            color: white;
+            width: 60px;
+            border-radius: 8px;
+        }
+
+        .course > li .details {
+            position: absolute;
+            top: 0px;
+            left: 70px;
+        }
+
+        .course > li .action {
+            display: inline;
+            left: 70px;
+            position: absolute;
+        }
+
+        .course > li:hover .action {
+            display: block;
+        }

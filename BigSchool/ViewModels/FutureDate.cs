@@ -5,19 +5,17 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 
-namespace BigSchool.ViewModels
+namespace bigschool.ViewModels
 {
     public class FutureDate : ValidationAttribute
     {
         public override bool IsValid(object value)
         {
             DateTime dateTime;
-            var isValid = DateTime.TryParseExact(Convert.ToString(value),
-                "MM/dd/yyyy",
+            var isValid = DateTime.TryParseExact(Convert.ToString(value), "MM/dd/yyyy",
                 CultureInfo.CurrentCulture,
                 DateTimeStyles.None,
                 out dateTime);
-
             return (isValid && dateTime > DateTime.Now);
         }
     }

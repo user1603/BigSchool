@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F33483EA-9EAF-4BF2-9702-8892BA78DA6A}</ProjectGuid>
+    <ProjectGuid>{F4197E9C-DD7B-454F-9F23-A994E2647303}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BigSchool</RootNamespace>
-    <AssemblyName>BigSchool</AssemblyName>
+    <RootNamespace>bigschool</RootNamespace>
+    <AssemblyName>bigschool</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -206,40 +207,45 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\Api\CoursesController.cs" />
+    <Compile Include="Controllers\API\CoursesController.cs" />
     <Compile Include="Controllers\AttendancesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\FollowingsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LecturerController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DTOs\AttendanceDto.cs" />
     <Compile Include="DTOs\FollowingDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006020131518_InitialModel.cs" />
-    <Compile Include="Migrations\202006020131518_InitialModel.Designer.cs">
-      <DependentUpon>202006020131518_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\202006020134487_IntialModel.cs" />
+    <Compile Include="Migrations\202006020134487_IntialModel.Designer.cs">
+      <DependentUpon>202006020134487_IntialModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006020206164_CreateTableCourse.cs" />
-    <Compile Include="Migrations\202006020206164_CreateTableCourse.Designer.cs">
-      <DependentUpon>202006020206164_CreateTableCourse.cs</DependentUpon>
+    <Compile Include="Migrations\202006020204043_CreateTableCourse.cs" />
+    <Compile Include="Migrations\202006020204043_CreateTableCourse.Designer.cs">
+      <DependentUpon>202006020204043_CreateTableCourse.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006020218207_PopulateCategoryTable.cs" />
-    <Compile Include="Migrations\202006020218207_PopulateCategoryTable.Designer.cs">
-      <DependentUpon>202006020218207_PopulateCategoryTable.cs</DependentUpon>
+    <Compile Include="Migrations\202006020205539_PopulateCategoryTable.cs" />
+    <Compile Include="Migrations\202006020205539_PopulateCategoryTable.Designer.cs">
+      <DependentUpon>202006020205539_PopulateCategoryTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006090351100_AddNameColumnToAppLicationUser.cs" />
-    <Compile Include="Migrations\202006090351100_AddNameColumnToAppLicationUser.Designer.cs">
-      <DependentUpon>202006090351100_AddNameColumnToAppLicationUser.cs</DependentUpon>
+    <Compile Include="Migrations\202006090314090_AddNameColumnToApplicationUser.cs" />
+    <Compile Include="Migrations\202006090314090_AddNameColumnToApplicationUser.Designer.cs">
+      <DependentUpon>202006090314090_AddNameColumnToApplicationUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006230457161_AddAttendance.cs" />
-    <Compile Include="Migrations\202006230457161_AddAttendance.Designer.cs">
-      <DependentUpon>202006230457161_AddAttendance.cs</DependentUpon>
+    <Compile Include="Migrations\202006111635429_AddAttendance.cs" />
+    <Compile Include="Migrations\202006111635429_AddAttendance.Designer.cs">
+      <DependentUpon>202006111635429_AddAttendance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006230617564_AddFollowingsTable.cs" />
-    <Compile Include="Migrations\202006230617564_AddFollowingsTable.Designer.cs">
-      <DependentUpon>202006230617564_AddFollowingsTable.cs</DependentUpon>
+    <Compile Include="Migrations\202006111814173_AddFollowingsTable.cs" />
+    <Compile Include="Migrations\202006111814173_AddFollowingsTable.Designer.cs">
+      <DependentUpon>202006111814173_AddFollowingsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006121154115_AddIsCanceledColumnToCourse.cs" />
+    <Compile Include="Migrations\202006121154115_AddIsCanceledColumnToCourse.Designer.cs">
+      <DependentUpon>202006121154115_AddIsCanceledColumnToCourse.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -252,7 +258,6 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\CoursesViewModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
     <Compile Include="ViewModels\FollowingViewModel.cs" />
     <Compile Include="ViewModels\FutureDate.cs" />
@@ -267,18 +272,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
-    <Content Include="Scripts\bootbox.all.js" />
-    <Content Include="Scripts\bootbox.all.min.js" />
-    <Content Include="Scripts\bootbox.js" />
-    <Content Include="Scripts\bootbox.locales.js" />
-    <Content Include="Scripts\bootbox.locales.min.js" />
     <Content Include="Scripts\bootbox.min.js" />
-    <Content Include="Scripts\bootbox\bootbox.all.js" />
-    <Content Include="Scripts\bootbox\bootbox.all.min.js" />
-    <Content Include="Scripts\bootbox\bootbox.js" />
-    <Content Include="Scripts\bootbox\bootbox.locales.js" />
-    <Content Include="Scripts\bootbox\bootbox.locales.min.js" />
-    <Content Include="Scripts\bootbox\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -306,6 +300,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -327,10 +322,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Courses\Create.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Courses\Attending.cshtml" />
-    <Content Include="Views\Lecturer\Following.cshtml" />
     <Content Include="Views\Courses\Mine.cshtml" />
+    <Content Include="Views\Lecturer\Following.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -344,23 +338,26 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006020131518_InitialModel.resx">
-      <DependentUpon>202006020131518_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006020134487_IntialModel.resx">
+      <DependentUpon>202006020134487_IntialModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006020206164_CreateTableCourse.resx">
-      <DependentUpon>202006020206164_CreateTableCourse.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006020204043_CreateTableCourse.resx">
+      <DependentUpon>202006020204043_CreateTableCourse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006020218207_PopulateCategoryTable.resx">
-      <DependentUpon>202006020218207_PopulateCategoryTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006020205539_PopulateCategoryTable.resx">
+      <DependentUpon>202006020205539_PopulateCategoryTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006090351100_AddNameColumnToAppLicationUser.resx">
-      <DependentUpon>202006090351100_AddNameColumnToAppLicationUser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006090314090_AddNameColumnToApplicationUser.resx">
+      <DependentUpon>202006090314090_AddNameColumnToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006230457161_AddAttendance.resx">
-      <DependentUpon>202006230457161_AddAttendance.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006111635429_AddAttendance.resx">
+      <DependentUpon>202006111635429_AddAttendance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006230617564_AddFollowingsTable.resx">
-      <DependentUpon>202006230617564_AddFollowingsTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006111814173_AddFollowingsTable.resx">
+      <DependentUpon>202006111814173_AddFollowingsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006121154115_AddIsCanceledColumnToCourse.resx">
+      <DependentUpon>202006121154115_AddIsCanceledColumnToCourse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -379,9 +376,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50715</DevelopmentServerPort>
+          <DevelopmentServerPort>50104</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50715/</IISUrl>
+          <IISUrl>http://localhost:1603/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

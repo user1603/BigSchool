@@ -1,9 +1,9 @@
-namespace BigSchool.Migrations
+namespace bigschool.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddNameColumnToAppLicationUser : DbMigration
+    public partial class AddNameColumnToApplicationUser : DbMigration
     {
         public override void Up()
         {

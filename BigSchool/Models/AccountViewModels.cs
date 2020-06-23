@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace BigSchool.Models
+namespace bigschool.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
@@ -82,7 +82,6 @@ namespace BigSchool.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
-
     }
 
     public class ResetPasswordViewModel

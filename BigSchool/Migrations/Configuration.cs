@@ -1,18 +1,18 @@
-namespace BigSchool.Migrations
+namespace bigschool.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<BigSchool.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<bigschool.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(BigSchool.Models.ApplicationDbContext context)
+        protected override void Seed(bigschool.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

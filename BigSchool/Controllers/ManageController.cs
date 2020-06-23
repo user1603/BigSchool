@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using BigSchool.Models;
+using bigschool.Models;
 
-namespace BigSchool.Controllers
+namespace bigschool.Controllers
 {
     [Authorize]
     public class ManageController : Controller
