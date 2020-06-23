@@ -7,19 +7,17 @@ using System.Web;
 
 namespace BigSchool.Models
 {
-    public class Attendance
+    public class Following
     {
-        public Course Course { get; set; }
-
         [Key]
         [Column(Order = 1)]
-        public int CourseId { get; set; }
-        public ApplicationUser Attendee { get; set; }
+        public string FollowerId { get; set; }
 
         [Key]
         [Column(Order = 2)]
-        public String AttendeeId { get; set; }
+        public string FolloweeId { get; set; }
 
-        
+        public ApplicationUser Follower { get; set; }
+        public ApplicationUser Followee { get; set; }
     }
 }
